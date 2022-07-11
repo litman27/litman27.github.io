@@ -7,13 +7,13 @@ header-includes:
 - \fancyfoot[CO,CE]{And this is a fancy footer}
 - \fancyfoot[LE,RO]{\thepage}
 navbar:
-  title: "ESTADÍSTICA"
+  
   left:
     - text: "INICIO"
       icon: fa-home
       href: inicio.html
     - text: "TEORIA"
-      icon: fa-book
+      icon: fa-atlas
       href: about.html
     - text: "EJERCICIOS"
       menu:
@@ -26,19 +26,29 @@ navbar:
       menu:
         - text: "BARRAS"
           href: BARRAS.html
+          icon: fa-chart-bar
         - text: "HISTOGRAMAS"
+          icon: fa-chart-bar
           href: HISTOGRAMAS.html
         - text: "POLÍGONOS DE FRECUENCIAS"
           href: POLIGONO.html
+          icon: fa-chart-line
         - text: "CIRCULAR"
           href: CIRCULAR.html
+          icon: fa-chart-pie 
         - text: "MORE"
           icon: fa-gear
           href: MORE.html
-      icon: fa-map
+      icon: fa-chart-bar 
     - text: "NOSOTROS"
       icon: fa-users
       href: NOSOTROS.html
+    - text: "CERRA SESSION"
+      icon: fa-sign-out-alt
+      menu:
+        - text: "LOG OUT"
+          icon: fa-sign-out-alt
+          href: index.html
   right:
     - icon: fa-question fa-lg
       href: https://bookdown.org/yihui/rmarkdown/websites.html

@@ -1,5 +1,4 @@
 ---
-title: "TEORIA"
 output:
   html_document:
     toc: false
@@ -8,9 +7,102 @@ output:
     code_download: false
     number_sections: true
 ---
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>TEORÍA ESTADÍSTICA</u>
+</center>
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#A52A2A>INFERENCIA ESTADÍSTICA</FONT></h4>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+<h5>Los dos objetivos principales de la Estadística son:Describir una muestra o subconjunto de una población (Estadística descriptiva), Extraer de la muestra información acerca de la población, La Inferencia Estadística se utiliza cuando no se puede observar toda la población (principalmente por motivos económicos). A partir de la muestra, se intenta obtener información que sirva para caracterizar toda la población, Hay varios procedimientos para obtener una muestra de una población. El objetivo de estos procedimientos es que la muestra represente lo mejor posible a dicha población, Nosotros nos centraremos en el conocido como muestreo aleatorio simple.</h5><center><img src="https://sites.google.com/site/variabilidadenlosdatos/_/rsrc/1468750420727/est-inferencial/inferencia.png?height=278&width=400" height="180" width="220"></center>
+</div>
+</div>
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#A52A2A>PARÁMETRO ESTADÍSTICO</FONT></h4>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+<h5>el parámetro estadístico es un valor, un número, que resume y permite interpretar los datos extraídos en el estudio de una muestra estadística. Imaginemos que hablamos de una población determinada que queremos analizar. En este caso, el parámetro estadístico podría ser la edad media de la población en cuestión.</h5>
 
+<h5>También, es conveniente señalar que a los parámetros estadísticos también se les conoce como estadísticos descriptivos.</h5>
+<h5>El cálculo de este parámetro, está definido mediante una fórmula aritmética. En el caso de la población, la media presenta una fórmula que se utiliza para calcular y extraer dicho parámetro.</h5><center><img src="https://economipedia.com/wp-content/uploads/Formula-media-aritmetica-2.jpg"></center>
+</div>
+</div>
+
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#A52A2A>ESTADÍGRAFOS</FONT></h4>
+<div class="container">
+<div class="jumbotron">
+<h5>Los números son construidos considerando toda la información que contiene dicha muestra, es decir, se consideran todos los datos que han sido recolectados. Pueden construirse estadígrafos para distintos fines, sin embargo, estudiaremos tres tipos de ellos dado su amplio uso en la estadística descriptiva: estadígrafos de orden, de tendencia central y de variabilidad.</h5>
+<h5>Cada vez que la muestra de datos, medidos al menos en escala ordinal, ha sido ordenada, es posible asignar a cada dato una ubicación (ranking) que indica su posición, en dirección ascendente, respecto al resto de la muestra. Esta ubicación se denota por un subíndice comprendido entre paréntesis. Por ejemplo, si se tienen los datos 12, 7, 15 y 13, al ordenarlos se tiene 7, 12, 13 y 15, es decir el primer dato de la ordenación es 7, el segundo 12, etc. Este hecho se expresa simbólicamente como sigue: </h5>
+<center>
+<h3>X(1)=7, X(2)=12, X(3)=13 y X(4)=15</h3>
+</center>
+<h5>Con esta notación, si se cuenta con n datos, el menor valor observado, que se llama el mínimo, será denotado por X(1) y el mayor valor observado, que se llama máximo, será denotado por X(n). La muestra se puede visualizar sobre un eje ordenado:</h5><center><img src="http://revistasoched.cl/3-2008/10/f-1.jpg"></center>
+</div>
+</div>
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#A52A2A>DISTRIBUCIONES MUESTRALES</FONT></h4>
+<div class="container">
+<div class="jumbotron">
+<h5>El estudio de determinadas características de una población se efectúa a través de diversas muestras que pueden extraerse de ella. El muestreo puede hacerse con o sin reposición, y la población de partida puede ser infinita o finita. Una población finita en la que se efectúa muestreo con reposición puede considerarse infinita teóricamente. También, a efectos prácticos, una población muy grande puede considerarse como infinita. En todo nuestro estudio vamos a limitarnos a una población de partida infinita o a muestreo con reposición. Consideremos todas las posibles muestras de tamaño n en una población. Para cada muestra podemos calcular un estadístico (media, desviación típica, proporción) que variará de una a otra. Así obtenemos una distribución del estadístico que se llama distribución muestral. Las dos medidas fundamentales de esta distribución son la media y la desviación típica, también denominada error típico. Hay que hacer notar que si el tamaño de la muestra es lo suficientemente grande las distribuciones muestrales son normales y en esto se basarán todos los resultados que alcancemos.</h5><center><img src="https://virtual.uptc.edu.co/ova/estadistica/docs/libros/estadistica1/img/image811.gif"></center>
+</div>
+</div>
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#A52A2A>ESTIMACIÓN</FONT></h4>
+<div class="container">
+<div class="jumbotron">
+<h5>es un cálculo que se realiza a partir de la evaluación estadística. Dicho estudio suele efectuarse sobre una muestra y no sobre toda la población objetivo. Para llevar a cabo una estimación, entonces, es necesario primero contar con una serie de datos. Además, es común que los investigadores se sustenten en un marco teórico. Por ejemplo, podemos estimar la inflación definiéndola como la diferencia entre los precios (de la economía) del periodo A y los precios del periodo B. Entonces, se calcula una variación porcentual entre los datos registrados en ambos puntos del tiempo.</h5><center>
+```{r echo=FALSE}
+# Consideremos n =100 personas 
+set.seed(1)
+n=100 
+# asi se simulan n datos que siguen
+# una distribución normal de  
+# media 177.7  y desviación típica 5.9 :
+X1=rnorm(n,177.7,5.9) 
+# dibujamos el histograma:
+hist(X1, probability = TRUE, col = 'lightblue', 
+main="100 estaturas de varones mayores de 18")
+# dibujamos los puntos:
+rug(X1)
+# dibujamos la estimación de la densidad:
+lines(density(X1), col="red",lwd=2)
+```
+</center>
+</div>
+</div>
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#A52A2A>INTERVALOS DE CONFIANZA</FONT></h4>
+<div class="container">
+<div class="jumbotron">
+<h5>La estimación puntual aproxima mediante un número el valor de una característica poblacional o parámetro desconocido (la altura media de los españoles, la intención de voto a un partido en las próximas elecciones generales, el tiempo medio de ejecución de un algoritmo, el número de taxis…) pero no nos indica el error que se comete en dicha estimación. Lo razonable, en la práctica, es adjuntar, junto a la estimación puntual del parámetro, un intervalo que mida el margen de error de la estimación. La construcción de dicho intervalo es el objetivo de la estimación por intervalos de confianza. Un intervalo de confianza para un parámetro con un nivel de confianza 1−α1−α (0<α<10<α<1), es un intervalo de extremos aleatorios (L,U)(L,U) que, con probabilidad 1−α1−α, contiene al parámetro en cuestión.
+</h5>
+<center><h5>P(parámetro∈(L,U))=1−α.</h5></center>
+<center>
+```{r echo=FALSE}
+set.seed(1) 
+n<-5
+B<-6
+muestras <- as.data.frame(matrix(rbinom(n*B, 
+                          1, 0.61), ncol=n))
+rownames(muestras) <- paste("muestra", 1:B, sep="")
+colnames(muestras) <- paste(" obs ", 1:n , sep="") 
+#muestras
+(muestras)
+```
+</center>
+</div>
+</div>
 <p class="lead">
     <a class="btn btn-primary btn-lg btn-block"
 href="./PROPUESTOS.html" role="button">NEXT</a>
   </p>
-More about this website.
+
