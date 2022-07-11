@@ -18,7 +18,7 @@ navbar:
     - text: "EJERCICIOS"
       menu:
         - text: "PROPUESTOS"
-          href: PROPUESTOS.html
+          href: PROPUESTO.html
         - text: "EXAMENES"
           href: EXAMENES.html
       icon: fa-flash
