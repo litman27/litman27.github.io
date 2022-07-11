@@ -9,6 +9,9 @@ header-includes:
 navbar:
   
   left:
+    - text: "ESTADÍSTICA"
+      icon: fa-chart-line
+      href: inicio.html
     - text: "INICIO"
       icon: fa-home
       href: inicio.html
