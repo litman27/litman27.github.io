@@ -1,0 +1,77 @@
+---
+title: "EJERCICIOS PROPUESTOS"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    toc_collapsed: false
+    code_download: false
+    number_sections: true
+---
+```{r echo=FALSE}
+fun<-function(x) x^3
+x1<-seq(0,1,by=0.01)
+plot(x1,fun(x1),col='black', type='l',lwd=2)
+polygon(c(0,x1,1),c(0,fun(x1),0),col = 'pink')
+#suma trapezoidal
+n=15
+a=0
+b=1
+h=(b-a)/n
+xi<-a+(0:n)*h
+xi
+par(mfrow=c(2,2))
+plot(x1,fun(x1), col='black',type='l', lwd=2, main='suma trapezoidal')
+for(j in 1:n){
+  segments(xi[j],0,xi[j+1],0,col = 'blue',lwd = 2)
+  segments(xi[j+1],0,xi[j+1],fun(xi[j+1]),col = 'blue')
+  segments(xi[j+1],fun(xi[j+1]),xi[j],fun(xi[j]),col = 'blue')
+}
+pot1<-(h/2)*(fun(a)+fun(b))
+pot2<-(h/2)*(sum(2*fun(a+(1:(n-1)*h))))
+protra<-pot1+pot2
+protra
+## por la derecha
+plot(x1,fun(x1),col='black', type = 'l', lwd=2,main = 'Riemann por la derecha')
+for(l in 1:n){
+  segments(xi[l],0,xi[l+1],0,col = 'red',lwd = 2)
+  segments(xi[l+1],0,xi[l+1],fun(xi[l+1]),col = 'red',lwd = 2)
+  segments(xi[l+1],fun(xi[l+1]),xi[l],fun(xi[l+1]),col = 'red',lwd = 2)
+  segments(xi[l],fun(xi[l+1]),xi[l],0,col = 'red',lwd = 2)
+}
+prode<-sum(fun(xi[-1]))*h
+prode
+## por la izquierda
+plot(x1,fun(x1),col='black', type = 'l', lwd=2,main = 'Riemann por la izquierda')
+for(l in 1:n){
+  segments(xi[l],0,xi[l+1],0,col = 'green',lwd = 2)
+  segments(xi[l],0,xi[l],fun(xi[l]),col = 'green',lwd = 2)
+  segments(xi[l+1],0,xi[l+1],fun(xi[l]),col = 'green',lwd = 2)
+  segments(xi[l+1],fun(xi[l]),xi[l],fun(xi[l]),col = 'green',lwd = 2)
+}
+proiz<-sum(fun(xi[-(n+1)]))*h
+proiz
+#monte carlo
+plot(x1,fun(x1),col='black', type = 'l',lwd=2,main = 'MonteCarlo')
+mc.in<-function(n1,a,b){
+  x<-runif(n1,a,b)
+  y<-runif(n1,0,fun(b))
+  co<-ifelse(y<=fun(x),'red','black')
+  points(x,y,col=co,pch=c(19,19))
+}
+n1=5000
+mc.in(n1,a,b)
+x2<-runif(n1,a,b)
+y2<-runif(n1,0,fun(b))
+co<-ifelse(y2<=fun(x2),'red','black')
+table(co)/n1
+
+mc.3<-function(n3,a,b){
+  x<-runif(n3,a,b)
+  f<-(b-a)*mean(fun(x))
+  return(f)
+  
+}
+n3=10000000
+mc.3(n3,a,b)
+```

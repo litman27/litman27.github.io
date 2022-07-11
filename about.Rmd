@@ -1,0 +1,16 @@
+---
+title: "TEORIA"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    toc_collapsed: false
+    code_download: false
+    number_sections: true
+---
+
+<p class="lead">
+    <a class="btn btn-primary btn-lg btn-block"
+href="./PROPUESTOS.html" role="button">NEXT</a>
+  </p>
+More about this website.

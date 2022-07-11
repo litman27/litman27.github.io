@@ -1,0 +1,9 @@
+---
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    toc_collapsed: false
+    code_download: false
+    number_sections: true
+---

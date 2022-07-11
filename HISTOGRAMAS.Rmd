@@ -1,0 +1,32 @@
+---
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    toc_collapsed: false
+    code_download: false
+    number_sections: true
+---
+```{r echo=FALSE}
+dados<-1:6
+dado<-function(n){
+  mean(sample(dados,n,T))
+}
+plot(sapply(1:1000,dado),type='l',col='blue')
+abline(h=3.5, lwd=2, lty=2,col='red')
+sapply(1:10,dado)
+mean(dados)
+```
+
+
+
+
+
+```{r echo=FALSE}
+x<-round(rnorm(1000,150,2),0)
+n=3000
+y<-sample(x,n,T)
+hist(y)
+abline(v=mean(x),lwd=3,lty=2,col=2)
+abline(v=mean(y),lwd=3,lty=2,col=4)
+```

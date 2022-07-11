@@ -1,0 +1,57 @@
+name: "introR"
+output_dir: "."
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhead[CO,CE]{This is fancy header}
+- \fancyfoot[CO,CE]{And this is a fancy footer}
+- \fancyfoot[LE,RO]{\thepage}
+navbar:
+  title: "ESTADÍSTICA"
+  left:
+    - text: "INICIO"
+      icon: fa-home
+      href: inicio.html
+    - text: "TEORIA"
+      icon: fa-book
+      href: about.html
+    - text: "EJERCICIOS"
+      menu:
+        - text: "PROPUESTOS"
+          href: PROPUESTOS.html
+        - text: "EXAMENES"
+          href: EXAMENES.html
+      icon: fa-flash
+    - text: "GRAFICOS"
+      menu:
+        - text: "BARRAS"
+          href: BARRAS.html
+        - text: "HISTOGRAMAS"
+          href: HISTOGRAMAS.html
+        - text: "POLÍGONOS DE FRECUENCIAS"
+          href: POLIGONO.html
+        - text: "CIRCULAR"
+          href: CIRCULAR.html
+        - text: "MORE"
+          icon: fa-gear
+          href: MORE.html
+      icon: fa-map
+    - text: "NOSOTROS"
+      icon: fa-users
+      href: NOSOTROS.html
+  right:
+    - icon: fa-question fa-lg
+      href: https://bookdown.org/yihui/rmarkdown/websites.html
+
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    css: "styles.css"
+    theme: flatly
+    highlight: zenburn
+    code_download: true
+    number_section: true
+    include:
+      after_body: footer.html
