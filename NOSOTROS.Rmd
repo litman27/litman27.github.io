@@ -7,3 +7,32 @@ output:
     code_download: false
     number_sections: true
 ---
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>NOSOTROS</u>
+</center>
+</div>
+</div>
+
+<div class="container">
+<div class="jumbotron">
+<h3><i><FONT COLOR=#483D8B>"Creemos que existe una mejor manera del aprendizaje del curso de estadistica mediante esta web site, creemos que todo comienza con las personas. Somos mucho más que un proveedor de enseñansa y desarrollo de software con Rstudio, y los valores que impulsan a nuestra pagina que no son meras palabras. Estamos motivados por nuestra oportunidad diaria de crear un impacto real en el mundo y permitir que nuestros cursos, nuestros usuarios y nuestra comunidad alcancen más allá de su potencial percibido"
+</FONT></i></h3>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+
+<h2 align="left" class="autor"><center>
+<B><FONT COLOR=	#FF7F50>MISIÓN</FONT></h2></center>
+<h3><i><FONT COLOR=#483D8B><img src="https://www.imagenspng.com.br/wp-content/uploads/2020/10/among-us-red-leaf-hat-png-01.png" height="300" width="200" align="left">"Esta web site de la estadística es hallar tiene como misión hayar las regularidades que se encuentran en los fenómenos de masa. También es útil usar datos obtenidos a partir de una parte de un grupo para predecir qué sucederá con el grupo entero. Analizar los datos obtenidos de manera descriptiva y formular una interpretación de los resultados. Aplicar las técnicas inferenciales más adecuadas al problema en cuestión e interpretar resultados".
+</FONT></i></h3>
+</div>
+</div>
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="inicio.html" >Inicio</a>
+  </p>

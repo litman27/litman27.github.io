@@ -7,3 +7,127 @@ output:
     code_download: false
     number_sections: true
 ---
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>GRÁFICOS DE BARRAS</u>
+</center>
+</div>
+</div>
+
+---
+<div class="container">
+<div class="jumbotron">
+<h5><FONT COLOR=	#000000>Para crear un gráfico de barras en R, puedes usar la función de R base barplot. En este ejemplo, vamos a crear un diagrama de barras a partir de un data frame. Concretamente vamos a usar el conocido conjunto de datos mtcars. En primer lugar, carga los datos y crea una tabla para la columna cyl con la función de table.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+# Cargamos los datos
+data(mtcars)
+attach(mtcars)
+# Tabla de frecuencias
+mi_tabla <- table(cyl)
+mi_tabla
+# Una fila, dos columnas
+par(mfrow = c(1, 2))
+
+# Gráfico de barras de frecuencia absoluta
+barplot(mi_tabla, main = "Frequencia absoluta",
+        col = rainbow(3))
+
+# Gráfico de barras de frecuencia relativa
+barplot(prop.table(mi_tabla) * 100, main = "Frequencia relativa (%)",
+        col = rainbow(3))
+
+par(mfrow = c(1, 1))
+```
+</center>
+
+<div class="container">
+<div class="jumbotron">
+
+<h5><FONT COLOR=	#000000>Además, por una parte, podríamos agregar curvas sobre el gráfico de barras para representar otra variable, como sucede con la temperatura en el caso de los climogramas. En este caso vamos a dibujar una línea sobre el gráfico que hemos hecho con nuestra tabla.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+barp <- barplot(mi_tabla,                     # Guarda los valores de X que
+                main = "Frequencia absoluta", # representan el centro de 
+                col = rainbow(3))             # cada barra           
+                                                         
+lines(barp, c(5, 4, 12), type = "o", lwd = 3)
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>GRÁFICO DE BARRAS HORIZONTAL EN R</FONT></h4>
+<h5><FONT COLOR=	#000000>Por defecto, los gráficos de barras en R se dibujan verticalmente. Sin embargo, es común representar gráficos de barras horizontales. Puedes rotar 90º el gráfico y crear un gráfico de barras horizontales estableciendo el argumento horiz como TRUE.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+barplot(mi_tabla, main = "Gráfico de barras horizontal",
+        ylab = "Número de cilindros", xlab = "Frecuencia",
+        horiz = TRUE) # Gráfico de barras horizontal
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>LEYENDA DEL GRÁFICO DE BARRAS</FONT></h4>
+<h5><FONT COLOR=	#000000>Se puede agregar una leyenda a un diagrama de barras en R con el argumento legend.text, donde puedes especificar los nombres que quieres agregar a la leyenda. Ten en cuenta que en RStudio la gráfica resultante puede ser ligeramente diferente, ya que por ejemplo el fondo de la leyenda será blanco en lugar de transparente.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+barplot(mi_tabla, xlab = "Número de cilindros",
+        col = rainbow(3),
+        legend.text = rownames(mi_tabla)) # Leyenda
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>VALORES NUMÉRICOS EN GRUPOS</FONT></h4>
+<h5><FONT COLOR=	#000000>Los gráficos de barras también se pueden usar para resumir una variable en grupos dados por uno o varios factores.Supón que quieres mostrar la cantidad de cilindros y el tipo de transmisión en función de la potencia media de los automóviles. Puedes utilizar la función tapply para crear la tabla correspondiente, Ahora puedes crear el diagrama de barras correspondiente en R.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+resumen_datos <- tapply(mtcars$hp, list(cilindros = mtcars$cyl,
+                                        transmision = am),
+                        FUN = mean, na.rm = TRUE)
+resumen_datos
+```
+</center>
+
+<center>
+```{r echo=FALSE}
+
+par(mar = c(5, 5, 4, 10))
+
+barplot(resumen_datos, xlab = "Tipo de transmisión",
+        main = "Media CV",
+        col = rainbow(3),
+        beside = TRUE,
+        legend.text = rownames(resumen_datos),
+        args.legend = list(title = "Cilindros", x = "topright",
+                           inset = c(-0.20, 0)))
+```
+</center>
+
+
+
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="HISTOGRAMAS.html" >siguiente</a>
+  </p>

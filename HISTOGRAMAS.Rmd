@@ -7,26 +7,118 @@ output:
     code_download: false
     number_sections: true
 ---
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>GRÁFICOS DE HISTOGRAMAS</u>
+</center>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+<h5><FONT COLOR=	#000000>Puedes dibujar un histograma en R con la función hist. Por defecto, la función creará un histograma de frecuencias.
+</FONT></h5>
+</div>
+</div>
+<center>
 ```{r echo=FALSE}
-dados<-1:6
-dado<-function(n){
-  mean(sample(dados,n,T))
-}
-plot(sapply(1:1000,dado),type='l',col='blue')
-abline(h=3.5, lwd=2, lty=2,col='red')
-sapply(1:10,dado)
-mean(dados)
+distancia <- c(241.1, 284.4, 220.2, 272.4, 271.1, 268.3,
+               291.6, 241.6, 286.1, 285.9, 259.6, 299.6,
+               253.1, 239.6, 277.8, 263.8, 267.2, 272.6,
+               283.4, 234.5, 260.4, 264.2, 295.1, 276.4,
+               263.1, 251.4, 264.0, 269.2, 281.0, 283.2)
+hist(distancia, main = "Histograma de frecuencias", # Frecuencia
+     ylab = "Frecuencia")
 ```
+</center>
 
-
-
-
-
+<div class="container">
+<div class="jumbotron">
+<h5><FONT COLOR=	#000000>Sin embargo, si estableces el argumento prob como TRUE, obtendrás un histograma de densidad
+</FONT></h5>
+</div>
+</div>
+<center>
 ```{r echo=FALSE}
-x<-round(rnorm(1000,150,2),0)
-n=3000
-y<-sample(x,n,T)
-hist(y)
-abline(v=mean(x),lwd=3,lty=2,col=2)
-abline(v=mean(y),lwd=3,lty=2,col=4)
+distancia <- c(241.1, 284.4, 220.2, 272.4, 271.1, 268.3,
+               291.6, 241.6, 286.1, 285.9, 259.6, 299.6,
+               253.1, 239.6, 277.8, 263.8, 267.2, 272.6,
+               283.4, 234.5, 260.4, 264.2, 295.1, 276.4,
+               263.1, 251.4, 264.0, 269.2, 281.0, 283.2)
+hist(distancia, prob = TRUE, main = "Histograma de densidad", # Densidad
+     ylab = "Densidad")
 ```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h5><FONT COLOR=	#000000>Además, puedes añadir un grid al histograma con la función grid de la siguiente manera.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+distancia <- c(241.1, 284.4, 220.2, 272.4, 271.1, 268.3,
+               291.6, 241.6, 286.1, 285.9, 259.6, 299.6,
+               253.1, 239.6, 277.8, 263.8, 267.2, 272.6,
+               283.4, 234.5, 260.4, 264.2, 295.1, 276.4,
+               263.1, 251.4, 264.0, 269.2, 281.0, 283.2)
+hist(distancia, prob = TRUE, ylab = "Densidad", main = "Grid")
+grid(nx = NA, ny = NULL, lty = 2, col = "gray", lwd = 1)
+hist(distancia, prob = TRUE, add = TRUE, col = "white")
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>CAMBIAR EL COLOR AL HISTOGRAMA</FONT></h4>
+<h5><FONT COLOR=	#000000>Ahora que ya sabes crear un histograma en R, también puedes personalizarlo. Si quieres cambiar el color de las barras puede establecer el parámetro col al color que prefieras. Al igual que sucede con cualquier otro gráfico en R, puedes personalizar muchas características del gráfico, como el título, los ejes, el tamaño de fuente, la escala de los ejes
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+hist(distancia, main = "Cambiar color", ylab = "Frecuencia", col = "lightblue")
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>HISTOGRAMA EN R CON DOS VARIABLES</FONT></h4>
+<h5><FONT COLOR=	#000000>Establecer el argumento add como TRUE permite añadir un histograma sobre otro gráfico. Como ejemplo, puedes crear un histograma en R por grupo
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+set.seed(1)
+
+x <- rnorm(1000)    # Primer grupo
+y <- rnorm(1000, 1) # Segundo grupo
+
+hist(x, main = "Dos variables", ylab = "Frecuencia")
+hist(y, add = TRUE, col = rgb(1, 0, 0, alpha = 0.5))
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>HISTOGRAMA CON CURVA NORMAL</FONT></h4>
+<h5><FONT COLOR=	#000000>Para dibujar una curva normal sobre un histograma, puede usar las funciones dnorm y lines.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+hist(distancia, prob = TRUE,
+     main = "Histograma con curva normal", ylab = "Densidad")
+x <- seq(min(distancia), max(distancia), length = 40)
+f <- dnorm(x, mean = mean(distancia), sd = sd(distancia))
+lines(x, f, col = "red", lwd = 2)
+```
+</center>
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="POLIGONO.html" >siguiente</a>
+  </p>

@@ -259,23 +259,6 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-flash"></span>
-     
-    EJERCICIOS
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="PROPUESTO.html">PROPUESTOS</a>
-    </li>
-    <li>
-      <a href="EXAMENES.html">EXAMENES</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-chart-bar"></span>
      
     GRAFICOS
@@ -317,6 +300,23 @@ $(document).ready(function () {
          
         MORE
       </a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-flash"></span>
+     
+    EJERCICIOS
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="PROPUESTO.html">PROPUESTOS</a>
+    </li>
+    <li>
+      <a href="EXAMENES.html">EXAMENES</a>
     </li>
   </ul>
 </li>
@@ -366,7 +366,114 @@ $(document).ready(function () {
 </div>
 
 
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>GRÁFICOS DE BARRAS</u>
+</center>
+</div>
+</div>
+<hr />
+<div class="container">
+<div class="jumbotron">
+<h5>
+<FONT COLOR=    #000000>Para crear un gráfico de barras en R, puedes
+usar la función de R base barplot. En este ejemplo, vamos a crear un
+diagrama de barras a partir de un data frame. Concretamente vamos a usar
+el conocido conjunto de datos mtcars. En primer lugar, carga los datos y
+crea una tabla para la columna cyl con la función de table. </FONT>
+</h5>
+</div>
+</div>
+<center>
+<pre><code>## cyl
+##  4  6  8 
+## 11  7 14</code></pre>
+<img src="BARRAS_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h5>
+<FONT COLOR=    #000000>Además, por una parte, podríamos agregar curvas
+sobre el gráfico de barras para representar otra variable, como sucede
+con la temperatura en el caso de los climogramas. En este caso vamos a
+dibujar una línea sobre el gráfico que hemos hecho con nuestra tabla.
+</FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="BARRAS_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR= #FF7F50>GRÁFICO DE BARRAS HORIZONTAL EN R</FONT>
+</h4>
+<h5>
+<FONT COLOR=    #000000>Por defecto, los gráficos de barras en R se
+dibujan verticalmente. Sin embargo, es común representar gráficos de
+barras horizontales. Puedes rotar 90º el gráfico y crear un gráfico de
+barras horizontales estableciendo el argumento horiz como TRUE. </FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="BARRAS_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR= #FF7F50>LEYENDA DEL GRÁFICO DE BARRAS</FONT>
+</h4>
+<h5>
+<FONT COLOR=    #000000>Se puede agregar una leyenda a un diagrama de
+barras en R con el argumento legend.text, donde puedes especificar los
+nombres que quieres agregar a la leyenda. Ten en cuenta que en RStudio
+la gráfica resultante puede ser ligeramente diferente, ya que por
+ejemplo el fondo de la leyenda será blanco en lugar de transparente.
+</FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="BARRAS_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR= #FF7F50>VALORES NUMÉRICOS EN GRUPOS</FONT>
+</h4>
+<h5>
+<FONT COLOR=    #000000>Los gráficos de barras también se pueden usar
+para resumir una variable en grupos dados por uno o varios
+factores.Supón que quieres mostrar la cantidad de cilindros y el tipo de
+transmisión en función de la potencia media de los automóviles. Puedes
+utilizar la función tapply para crear la tabla correspondiente, Ahora
+puedes crear el diagrama de barras correspondiente en R. </FONT>
+</h5>
+</div>
+</div>
+<center>
+<pre><code>##          transmision
+## cilindros         0        1
+##         4  84.66667  81.8750
+##         6 115.25000 131.6667
+##         8 194.16667 299.5000</code></pre>
+</center>
+<center>
+<img src="BARRAS_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+</center>
+<p align="center" class="lead">
+<a class="btn btn-primary btn-lg "
+href="HISTOGRAMAS.html" >siguiente</a>
+</p>
 
+<p><center>Contactanos:</center></p><center>
+	 <a href="https://www.facebook.com/lttmnn"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" height="50" width="50"></a><a href="https://api.whatsapp.com/send?phone=923848572&text=d%C3%A9janos%20tu%20mensaje%20"><img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1.png" height="60" width="60"></a>
+</center>
 
 <p><center>Copyright &copy; 2022 github <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="30" width="30" >, Inc. All rights reserved.</center></p>
 

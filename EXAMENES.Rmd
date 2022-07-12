@@ -1,5 +1,4 @@
 ---
-title: "EJERCICIOS PROPUESTOS"
 output:
   html_document:
     toc: false
@@ -8,70 +7,51 @@ output:
     code_download: false
     number_sections: true
 ---
-```{r echo=FALSE}
-fun<-function(x) x^3
-x1<-seq(0,1,by=0.01)
-plot(x1,fun(x1),col='black', type='l',lwd=2)
-polygon(c(0,x1,1),c(0,fun(x1),0),col = 'pink')
-#suma trapezoidal
-n=15
-a=0
-b=1
-h=(b-a)/n
-xi<-a+(0:n)*h
-xi
-par(mfrow=c(2,2))
-plot(x1,fun(x1), col='black',type='l', lwd=2, main='suma trapezoidal')
-for(j in 1:n){
-  segments(xi[j],0,xi[j+1],0,col = 'blue',lwd = 2)
-  segments(xi[j+1],0,xi[j+1],fun(xi[j+1]),col = 'blue')
-  segments(xi[j+1],fun(xi[j+1]),xi[j],fun(xi[j]),col = 'blue')
-}
-pot1<-(h/2)*(fun(a)+fun(b))
-pot2<-(h/2)*(sum(2*fun(a+(1:(n-1)*h))))
-protra<-pot1+pot2
-protra
-## por la derecha
-plot(x1,fun(x1),col='black', type = 'l', lwd=2,main = 'Riemann por la derecha')
-for(l in 1:n){
-  segments(xi[l],0,xi[l+1],0,col = 'red',lwd = 2)
-  segments(xi[l+1],0,xi[l+1],fun(xi[l+1]),col = 'red',lwd = 2)
-  segments(xi[l+1],fun(xi[l+1]),xi[l],fun(xi[l+1]),col = 'red',lwd = 2)
-  segments(xi[l],fun(xi[l+1]),xi[l],0,col = 'red',lwd = 2)
-}
-prode<-sum(fun(xi[-1]))*h
-prode
-## por la izquierda
-plot(x1,fun(x1),col='black', type = 'l', lwd=2,main = 'Riemann por la izquierda')
-for(l in 1:n){
-  segments(xi[l],0,xi[l+1],0,col = 'green',lwd = 2)
-  segments(xi[l],0,xi[l],fun(xi[l]),col = 'green',lwd = 2)
-  segments(xi[l+1],0,xi[l+1],fun(xi[l]),col = 'green',lwd = 2)
-  segments(xi[l+1],fun(xi[l]),xi[l],fun(xi[l]),col = 'green',lwd = 2)
-}
-proiz<-sum(fun(xi[-(n+1)]))*h
-proiz
-#monte carlo
-plot(x1,fun(x1),col='black', type = 'l',lwd=2,main = 'MonteCarlo')
-mc.in<-function(n1,a,b){
-  x<-runif(n1,a,b)
-  y<-runif(n1,0,fun(b))
-  co<-ifelse(y<=fun(x),'red','black')
-  points(x,y,col=co,pch=c(19,19))
-}
-n1=5000
-mc.in(n1,a,b)
-x2<-runif(n1,a,b)
-y2<-runif(n1,0,fun(b))
-co<-ifelse(y2<=fun(x2),'red','black')
-table(co)/n1
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>EJERCICIOS DE EXAMENES</u>
+</center>
+</div>
+</div>
 
-mc.3<-function(n3,a,b){
-  x<-runif(n3,a,b)
-  f<-(b-a)*mean(fun(x))
-  return(f)
-  
-}
-n3=10000000
-mc.3(n3,a,b)
+
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>EJERCICIO 01:</FONT></h4>
+<h5><FONT COLOR=	#000000>Use el conjunto de datos 84.4, 105, 116.9, 124.9, 91.7, 131.1, 104, 92.1, 116.4, 130.5.Se comenta que una persona que gasta más de 120 soles en su visita a la feria es considerada un buen visitante.El administrador de la feria afirma que la proporción de buenos cliente es superior al 30 %.A un nivel de significancia de 0.04,¿La afirmación del administrador es cierta?. Si la proporción de buenos clientes(p ̄) se encuentra entre:El pvalor para la prueba de proporción,es:(utilice la función binom.test)
+</FONT></h5>
+</div>
+</div>
+<left>
+```{r echo=TRUE}
+binom.test(3,10,0.30,alternative = "g", conf.level = 0.96)
+h=binom.test(3,10,0.30,alternative = "two.sided", conf.level = 0.96)
+h$conf.int
 ```
+</left>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>EJERCICIO 02:</FONT></h4>
+<h5><FONT COLOR=	#000000>Stark S.A empresa reconocida en el mercado nacional de la producción, comercializacióny mantenimiento de drones. Últimamente el área de control de calidad detectado defectosen la producción de drones para modelos xperia. El jefe de control de calidad tomará la decisión de enviar una nueva capacitación a aquellos trabajdores que producen el modeloXperia, si la probabilidad de que la media muestral sea mayor que 2.51 sea al menos 89 %a) La probabilidad de que el jefe de control de calidad envie a una nueva capacitaciónlos trabajdores b) Determine el percentil 94: c) ¿cuál es la decisión del jefe de control de calidad?
+</FONT></h5>
+</div>
+</div>
+<left>
+```{r echo=TRUE}
+p<-c(0,0,1,1,1,1,2,2,2,3,3,3,3,4,4,4,5,5)
+p
+quantile(p,0.89)
+pnorm(4,mean = mean(p),sd=sd(p),lower.tail = T)
+```
+</left>
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="NOSOTROS.html" >siguiente</a>
+  </p>
+
+

@@ -259,23 +259,6 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-flash"></span>
-     
-    EJERCICIOS
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="PROPUESTO.html">PROPUESTOS</a>
-    </li>
-    <li>
-      <a href="EXAMENES.html">EXAMENES</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-chart-bar"></span>
      
     GRAFICOS
@@ -317,6 +300,23 @@ $(document).ready(function () {
          
         MORE
       </a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-flash"></span>
+     
+    EJERCICIOS
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="PROPUESTO.html">PROPUESTOS</a>
+    </li>
+    <li>
+      <a href="EXAMENES.html">EXAMENES</a>
     </li>
   </ul>
 </li>
@@ -366,11 +366,104 @@ $(document).ready(function () {
 </div>
 
 
-<p><img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre><code>##  [1] 6.000000 3.500000 3.333333 4.000000 3.400000 4.166667 3.857143 3.125000
-##  [9] 3.111111 2.900000</code></pre>
-<pre><code>## [1] 3.5</code></pre>
-<p><img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>GRÁFICOS DE HISTOGRAMAS</u>
+</center>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+<h5>
+<FONT COLOR=    #000000>Puedes dibujar un histograma en R con la función
+hist. Por defecto, la función creará un histograma de frecuencias.
+</FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h5>
+<FONT COLOR=    #000000>Sin embargo, si estableces el argumento prob
+como TRUE, obtendrás un histograma de densidad </FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h5>
+<FONT COLOR=    #000000>Además, puedes añadir un grid al histograma con
+la función grid de la siguiente manera. </FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR= #FF7F50>CAMBIAR EL COLOR AL HISTOGRAMA</FONT>
+</h4>
+<h5>
+<FONT COLOR=    #000000>Ahora que ya sabes crear un histograma en R,
+también puedes personalizarlo. Si quieres cambiar el color de las barras
+puede establecer el parámetro col al color que prefieras. Al igual que
+sucede con cualquier otro gráfico en R, puedes personalizar muchas
+características del gráfico, como el título, los ejes, el tamaño de
+fuente, la escala de los ejes </FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR= #FF7F50>HISTOGRAMA EN R CON DOS VARIABLES</FONT>
+</h4>
+<h5>
+<FONT COLOR=    #000000>Establecer el argumento add como TRUE permite
+añadir un histograma sobre otro gráfico. Como ejemplo, puedes crear un
+histograma en R por grupo </FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR= #FF7F50>HISTOGRAMA CON CURVA NORMAL</FONT>
+</h4>
+<h5>
+<FONT COLOR=    #000000>Para dibujar una curva normal sobre un
+histograma, puede usar las funciones dnorm y lines. </FONT>
+</h5>
+</div>
+</div>
+<center>
+<img src="HISTOGRAMAS_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+</center>
+<p align="center" class="lead">
+<a class="btn btn-primary btn-lg "
+href="POLIGONO.html" >siguiente</a>
+</p>
+
+<p><center>Contactanos:</center></p><center>
+	 <a href="https://www.facebook.com/lttmnn"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" height="50" width="50"></a><a href="https://api.whatsapp.com/send?phone=923848572&text=d%C3%A9janos%20tu%20mensaje%20"><img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1.png" height="60" width="60"></a>
+</center>
 
 <p><center>Copyright &copy; 2022 github <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="30" width="30" >, Inc. All rights reserved.</center></p>
 

@@ -7,3 +7,62 @@ output:
     code_download: false
     number_sections: true
 ---
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>MAS GRÁFICOS</u>
+</center>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>DIAGRAMA DE DISPERSIÓN DE PUNTOS: plot()</FONT></h4>
+
+<h5><FONT COLOR=	#000000>Esta función ofrece muchas variantes dependiendo del tipo de objeto al que se aplique. El caso más simple corresponde a la representación de dos variables x e y. En tal caso, plot(x,y) representa un diagrama de dispersión de puntos de y frente a x.A modo de ejemplo se muestra a continuación un gráfico de la esperanza de vida (LifeExpectancy, que será nuestra variable y) frente al índice de felicidad (Happiness, que es la x) en una muestra de 143 países.</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+library(Lock5Data)
+data(HappyPlanetIndex)
+attach(HappyPlanetIndex)
+plot(Happiness,LifeExpectancy,pch=19,col="green")
+```
+</center>
+
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>GRÁFICOS DE CAJA Y BIGOTE: boxplot()</FONT></h4>
+
+<h5><FONT COLOR=	#000000>Lleva a cabo la representación de gráficos de “caja y bigote”. El siguiente ejemplo muestra el reparto de los niveles de felicidad entre las distintas regiones del globo:</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+boxplot(Happiness,Region,col="gold",xlab="Region",ylab="Happiness level",
+        main="Average happiness level by region")
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>REPRESENTACIONES TRIDIMENSIONALES: persp()</FONT></h4>
+
+<h5><FONT COLOR=	#000000>Esta función realiza representaciones tridimensionales (superficies). El dataframe volcano que se distribuye junto con la instalación básica de R (ver help(volcano)) contiene información topográfica del volcán Maunga Whau en Auckland, Nueva Zelanda, definida sobre una malla de 870×610 metros, con un nodo cada 10 metros</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+persp(x = 10*(1:nrow(volcano)), y=10*(1:ncol(volcano)), z=3*volcano, 
+      theta = 135, phi = 30, col = "brown", scale = TRUE,
+      ltheta = -120, shade = 0.75, border = NA, box = TRUE, main="Volcán Maunga Whau, Auckland, NZ")
+```
+</center>
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="PROPUESTO.html" >siguiente</a>
+  </p>

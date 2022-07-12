@@ -7,3 +7,135 @@ output:
     code_download: false
     number_sections: true
 ---
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>GRÁFICOS CIRCULARES</u>
+</center>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>GRÁFICO CIRCULAR: pie3D</FONT></h4>
+<h5><FONT COLOR=	#000000>La función pie permite crear gráficos de sectore en R. Considera, por ejemplo, que quieres crear un gráfico circular de la siguiente variable, que representa el conteo de cierto evento</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+count <- c(7, 25, 16, 12, 10, 30)
+pie(count)
+```
+</center>
+
+
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>PERSONALIZAR LA FUNCIÓN PIE</FONT></h4>
+<h5><FONT COLOR=	#000000>Además, puedes modificar el color del gráfico con el argumento col. En el siguiente bloque de código mostramos cómo usar diferentes paletas de colores. Ten en cuenta que el argumento cex permite modificar el tamaño de las etiquetas.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+par(mfrow = c(1, 3))
+
+pie(count, labels = count, col = 1:6, cex = 2)
+pie(count, labels = count, col = rainbow(6), cex = 2)
+pie(count, labels = count, col = topo.colors(6), cex = 2)
+
+par(mfrow = c(1, 1))
+```
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>AÑADIENDO UNA LEYENDA A LA FUNCIÓN PIE</FONT></h4>
+
+<h5><FONT COLOR=	#000000>Para crear un gráfico circular en R con leyenda, debes usar la función legend. Como ejemplo, si quieres mostrar una leyenda en la parte superior izquierda de la imagen</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+count_3 <- c(20, 50, 30)
+# sum(count_3) # 100
+
+pie(count_3, labels = paste0(count_3, "%"))
+
+legend("topleft", legend = c("Teatro", "Series", "Cine"),
+       fill =  c("white", "lightblue", "mistyrose"))
+```
+</center>
+
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>GRÁFICO CIRCULAR: pie3D</FONT></h4>
+<h5><FONT COLOR=	#000000>En esta última sección, aprenderás a crear gráficos circulares 3D en R. Para ello, deberás instalar el paquete plotrix, que contiene la función pie3D.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+library(plotrix)
+
+datos <- c(20, 40, 40)
+
+pie3D(datos)
+```
+</center>
+
+<div class="container">
+<div class="jumbotron">
+<h5><FONT COLOR=	#000000>Ten en cuenta que, de manera predeterminada, la función no muestra etiquetas, por lo que deberás indicarlas en el argumento labels.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+library(plotrix)
+datos <- c(20, 40, 40)
+pie3D(datos, labels = datos)
+```
+</center>
+
+
+
+
+
+
+
+<div class="container">
+<div class="jumbotron">
+<h5><FONT COLOR=	#000000>Al igual que con otros gráficos circulares, puedes personalizar varios parámetros gráficos del gráfico final, como los colores, los colores de las etiquetas o el color del borde, entre otros. Recuerda escribir help(pie3D) o ?pie3D para obtener detalles adicionales.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+library(plotrix)
+
+datos <- c(20, 40, 40)
+pie3D(datos, labels = datos, col = 2:4, labelcol = "blue", border = "white")
+
+```
+</center>
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="MORE.html" >siguiente</a>
+  </p>

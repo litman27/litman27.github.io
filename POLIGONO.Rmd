@@ -7,3 +7,46 @@ output:
     code_download: false
     number_sections: true
 ---
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>GRÁFICOS DE POLÍGONOS DE FRECUENCIA</u>
+</center>
+</div>
+</div>
+<div class="container">
+<div class="jumbotron">
+<h5><FONT COLOR=	#000000>Guardar los datos del histograma. Asigna el gráfico del historama a una variable h. Observa la información almacenada en la variable h a través de h$breaks, h$counts y h$mids. ¿Qué tipo de información almacenan breaks, counts y mids? Dibuja una línea extra en el histograma de manera que represente el polígono de frecuencias.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=TRUE}
+h= hist(mtcars$carb, main = "Carburetors", ylim=c(0,20), col="red", xlab="Number of Carburetors")
+hist(mtcars$carb, main = "Carburetors", xlim=c(0,8), ylim=c(0,20), col="red", xlab="Number of Carburetors")
+lines(c(0,h$mids),c(0,h$counts), type = "b", pch = 20, col = "blue", lwd = 3)
+```
+</center>
+
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>POLÍGONO DE FRECUENCIAS ACUMULADA</FONT></h4>
+<h5><FONT COLOR=	#000000>Dibuja un gráfico que represente el polígono de frecuencias acumulada . Observa la estructura del código.¿Qué hace la función cumsum()?
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=TRUE}
+plot(c(0,h$mids), c(0,cumsum(h$counts)), type = "b", col = "blue", pch = 20)
+```
+</center>
+</center>
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="CIRCULAR.html" >siguiente</a>
+  </p>
+
+

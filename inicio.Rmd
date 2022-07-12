@@ -44,7 +44,7 @@ data-dismiss="alert">&times;</button>
   
   <p class="lead">
     <a class="btn btn-primary btn-lg btn-block"
-href="./about.html" role="button">comenzar</a>
+href="./about.html" >comenzar</a>
   </p>
 </div>
 </div>

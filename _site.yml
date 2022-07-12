@@ -18,13 +18,6 @@ navbar:
     - text: "TEORIA"
       icon: fa-atlas
       href: about.html
-    - text: "EJERCICIOS"
-      menu:
-        - text: "PROPUESTOS"
-          href: PROPUESTO.html
-        - text: "EXAMENES"
-          href: EXAMENES.html
-      icon: fa-flash
     - text: "GRAFICOS"
       menu:
         - text: "BARRAS"
@@ -42,7 +35,14 @@ navbar:
         - text: "MORE"
           icon: fa-gear
           href: MORE.html
-      icon: fa-chart-bar 
+      icon: fa-chart-bar
+    - text: "EJERCICIOS"
+      menu:
+        - text: "PROPUESTOS"
+          href: PROPUESTO.html
+        - text: "EXAMENES"
+          href: EXAMENES.html
+      icon: fa-flash
     - text: "NOSOTROS"
       icon: fa-users
       href: NOSOTROS.html

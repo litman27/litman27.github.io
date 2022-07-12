@@ -7,17 +7,143 @@ output:
     code_download: false
     number_sections: true
 ---
-$$f_X(x;\mu,\sigma)=\displaystyle \frac{1}{\sqrt{2\pi}\,\sigma}\,\, e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$$
+<div class="container-fluid main-container">
+<div id="header">
+<h1 class="title toc-ignore">
+<B>
+<center>
+<u>EJERCICOS DE PROPUESTOS</u>
+</center>
+</div>
+</div>
 
-
-```{r echo=FALSE}
-knitr::include_graphics("https://miro.medium.com/max/1072/1*6Ry3GfW4zrPlJ1feZlU2tA.png")
-```
-
-<table style="background-color:#DBF9FC">
-<tr>
-<th>nombre</th></tr></table>
 <div class="container">
 <div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>EJERCICIO 01:</FONT></h4>
+<h5><FONT COLOR=	#000000>Graficar la suma trapezoidal, Riemann por la derecha, Riemann por la izquierda, y simular la grafica de MonteCarlo.
+</FONT></h5>
 </div>
-  </div>
+</div>
+<center>
+```{r echo=FALSE}
+fun<-function(x) x^3
+x1<-seq(0,1,by=0.01)
+plot(x1,fun(x1),col='black', type='l',lwd=2)
+polygon(c(0,x1,1),c(0,fun(x1),0),col = 'pink')
+#suma trapezoidal
+n=15
+a=0
+b=1
+h=(b-a)/n
+xi<-a+(0:n)*h
+xi
+par(mfrow=c(2,2))
+plot(x1,fun(x1), col='black',type='l', lwd=2, main='suma trapezoidal')
+for(j in 1:n){
+  segments(xi[j],0,xi[j+1],0,col = 'blue',lwd = 2)
+  segments(xi[j+1],0,xi[j+1],fun(xi[j+1]),col = 'blue')
+  segments(xi[j+1],fun(xi[j+1]),xi[j],fun(xi[j]),col = 'blue')
+}
+pot1<-(h/2)*(fun(a)+fun(b))
+pot2<-(h/2)*(sum(2*fun(a+(1:(n-1)*h))))
+protra<-pot1+pot2
+protra
+## por la derecha
+plot(x1,fun(x1),col='black', type = 'l', lwd=2,main = 'Riemann por la derecha')
+for(l in 1:n){
+  segments(xi[l],0,xi[l+1],0,col = 'red',lwd = 2)
+  segments(xi[l+1],0,xi[l+1],fun(xi[l+1]),col = 'red',lwd = 2)
+  segments(xi[l+1],fun(xi[l+1]),xi[l],fun(xi[l+1]),col = 'red',lwd = 2)
+  segments(xi[l],fun(xi[l+1]),xi[l],0,col = 'red',lwd = 2)
+}
+prode<-sum(fun(xi[-1]))*h
+prode
+## por la izquierda
+plot(x1,fun(x1),col='black', type = 'l', lwd=2,main = 'Riemann por la izquierda')
+for(l in 1:n){
+  segments(xi[l],0,xi[l+1],0,col = 'green',lwd = 2)
+  segments(xi[l],0,xi[l],fun(xi[l]),col = 'green',lwd = 2)
+  segments(xi[l+1],0,xi[l+1],fun(xi[l]),col = 'green',lwd = 2)
+  segments(xi[l+1],fun(xi[l]),xi[l],fun(xi[l]),col = 'green',lwd = 2)
+}
+proiz<-sum(fun(xi[-(n+1)]))*h
+proiz
+#monte carlo
+plot(x1,fun(x1),col='black', type = 'l',lwd=2,main = 'MonteCarlo')
+mc.in<-function(n1,a,b){
+  x<-runif(n1,a,b)
+  y<-runif(n1,0,fun(b))
+  co<-ifelse(y<=fun(x),'red','black')
+  points(x,y,col=co,pch=c(19,19))
+}
+n1=5000
+mc.in(n1,a,b)
+x2<-runif(n1,a,b)
+y2<-runif(n1,0,fun(b))
+co<-ifelse(y2<=fun(x2),'red','black')
+table(co)/n1
+
+mc.3<-function(n3,a,b){
+  x<-runif(n3,a,b)
+  f<-(b-a)*mean(fun(x))
+  return(f)
+  
+}
+n3=10000000
+mc.3(n3,a,b)
+```
+</center>
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>EJERCICIO 02:</FONT></h4>
+<h5><FONT COLOR=	#000000>graficar un histograma donde Se registran los datos de x y n=3000 de las muestras , y se obtiene el siguiente grafico de frecuencias con datos agrupados. Construir un histograma de frecuencias.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+x<-round(rnorm(1000,150,2),0)
+n=3000
+y<-sample(x,n,T)
+hist(y)
+abline(v=mean(x),lwd=3,lty=2,col=2)
+abline(v=mean(y),lwd=3,lty=2,col=4)
+```
+</center>
+
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>EJERCICIO 03:</FONT></h4>
+<h5><FONT COLOR=	#000000>declarar una formula para el calculo de una función fx de x, mu y sigma.
+</FONT></h5>
+</div>
+</div>
+
+$$f_X(x;\mu,\sigma)=\displaystyle \frac{1}{\sqrt{2\pi}\,\sigma}\,\, e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$$
+<div class="container">
+<div class="jumbotron">
+<h4 align="left" class="autor">
+<B><FONT COLOR=	#FF7F50>EJERCICIO 04:</FONT></h4>
+<h5><FONT COLOR=	#000000>graficar pese que un dado está trucado, de forma que las probabilidades con una funcion n, obtener las proporcionales a los datos probabilisticos de estas.
+</FONT></h5>
+</div>
+</div>
+<center>
+```{r echo=FALSE}
+dados<-1:6
+dado<-function(n){
+  mean(sample(dados,n,T))
+}
+plot(sapply(1:1000,dado),type='l',col='blue')
+abline(h=3.5, lwd=2, lty=2,col='red')
+sapply(1:10,dado)
+mean(dados)
+```
+</center>
+  <p align="center" class="lead">
+    <a class="btn btn-primary btn-lg "
+href="EXAMENES.html" >siguiente</a>
+  </p>
