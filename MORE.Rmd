@@ -24,6 +24,7 @@ output:
 <h5><FONT COLOR=	#000000>Esta función ofrece muchas variantes dependiendo del tipo de objeto al que se aplique. El caso más simple corresponde a la representación de dos variables x e y. En tal caso, plot(x,y) representa un diagrama de dispersión de puntos de y frente a x.A modo de ejemplo se muestra a continuación un gráfico de la esperanza de vida (LifeExpectancy, que será nuestra variable y) frente al índice de felicidad (Happiness, que es la x) en una muestra de 143 países.</FONT></h5>
 </div>
 </div>
+<div class="container">
 <center>
 ```{r echo=FALSE}
 library(Lock5Data)
@@ -32,7 +33,7 @@ attach(HappyPlanetIndex)
 plot(Happiness,LifeExpectancy,pch=19,col="green")
 ```
 </center>
-
+</div>
 <div class="container">
 <div class="jumbotron">
 <h4 align="left" class="autor">

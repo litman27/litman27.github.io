@@ -482,6 +482,7 @@ el histograma de manera que represente el polígono de frecuencias.
 </h5>
 </div>
 </div>
+<div class="container">
 <center>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>h<span class="ot">=</span> <span class="fu">hist</span>(mtcars<span class="sc">$</span>carb, <span class="at">main =</span> <span class="st">&quot;Carburetors&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>), <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Number of Carburetors&quot;</span>)</span></code></pre></div>
 <p><img src="POLIGONO_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
@@ -489,6 +490,7 @@ el histograma de manera que represente el polígono de frecuencias.
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">0</span>,h<span class="sc">$</span>mids),<span class="fu">c</span>(<span class="dv">0</span>,h<span class="sc">$</span>counts), <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div>
 <img src="POLIGONO_files/figure-html/unnamed-chunk-1-2.png" width="672" />
 </center>
+</div>
 <div class="container">
 <div class="jumbotron">
 <h4 align="left" class="autor">
@@ -501,11 +503,12 @@ función cumsum()? </FONT>
 </h5>
 </div>
 </div>
+<div class="container">
 <center>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">0</span>,h<span class="sc">$</span>mids), <span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">cumsum</span>(h<span class="sc">$</span>counts)), <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>)</span></code></pre></div>
 <img src="POLIGONO_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 </center>
-</center>
+</div>
 <p align="center" class="lead">
 <a class="btn btn-primary btn-lg "
 href="CIRCULAR.html" >siguiente</a>

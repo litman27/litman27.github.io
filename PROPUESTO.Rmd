@@ -25,6 +25,7 @@ output:
 </FONT></h5>
 </div>
 </div>
+<div class="container">
 <center>
 ```{r echo=FALSE}
 fun<-function(x) x^3
@@ -94,6 +95,7 @@ n3=10000000
 mc.3(n3,a,b)
 ```
 </center>
+</div>
 <div class="container">
 <div class="jumbotron">
 <h4 align="left" class="autor">
@@ -131,6 +133,7 @@ $$f_X(x;\mu,\sigma)=\displaystyle \frac{1}{\sqrt{2\pi}\,\sigma}\,\, e^{-\frac{1}
 </FONT></h5>
 </div>
 </div>
+<div class="container">
 <center>
 ```{r echo=FALSE}
 dados<-1:6
@@ -143,6 +146,7 @@ sapply(1:10,dado)
 mean(dados)
 ```
 </center>
+</div>
   <p align="center" class="lead">
     <a class="btn btn-primary btn-lg "
 href="EXAMENES.html" >siguiente</a>

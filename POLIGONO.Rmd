@@ -22,6 +22,7 @@ output:
 </FONT></h5>
 </div>
 </div>
+<div class="container">
 <center>
 ```{r echo=TRUE}
 h= hist(mtcars$carb, main = "Carburetors", ylim=c(0,20), col="red", xlab="Number of Carburetors")
@@ -29,6 +30,7 @@ hist(mtcars$carb, main = "Carburetors", xlim=c(0,8), ylim=c(0,20), col="red", xl
 lines(c(0,h$mids),c(0,h$counts), type = "b", pch = 20, col = "blue", lwd = 3)
 ```
 </center>
+</div>
 
 <div class="container">
 <div class="jumbotron">
@@ -38,12 +40,13 @@ lines(c(0,h$mids),c(0,h$counts), type = "b", pch = 20, col = "blue", lwd = 3)
 </FONT></h5>
 </div>
 </div>
+<div class="container">
 <center>
 ```{r echo=TRUE}
 plot(c(0,h$mids), c(0,cumsum(h$counts)), type = "b", col = "blue", pch = 20)
 ```
 </center>
-</center>
+</div>
   <p align="center" class="lead">
     <a class="btn btn-primary btn-lg "
 href="CIRCULAR.html" >siguiente</a>

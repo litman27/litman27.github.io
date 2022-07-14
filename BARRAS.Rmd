@@ -24,6 +24,7 @@ output:
 </FONT></h5>
 </div>
 </div>
+<div class="container">
 <center>
 ```{r echo=FALSE}
 # Cargamos los datos
@@ -46,6 +47,7 @@ barplot(prop.table(mi_tabla) * 100, main = "Frequencia relativa (%)",
 par(mfrow = c(1, 1))
 ```
 </center>
+</div>
 
 <div class="container">
 <div class="jumbotron">
@@ -101,6 +103,7 @@ barplot(mi_tabla, xlab = "Número de cilindros",
 </FONT></h5>
 </div>
 </div>
+<div class="container">
 <center>
 ```{r echo=FALSE}
 resumen_datos <- tapply(mtcars$hp, list(cilindros = mtcars$cyl,
@@ -109,7 +112,8 @@ resumen_datos <- tapply(mtcars$hp, list(cilindros = mtcars$cyl,
 resumen_datos
 ```
 </center>
-
+</div>
+<div class="container">
 <center>
 ```{r echo=FALSE}
 
@@ -124,7 +128,7 @@ barplot(resumen_datos, xlab = "Tipo de transmisión",
                            inset = c(-0.20, 0)))
 ```
 </center>
-
+</div>
 
 
   <p align="center" class="lead">
